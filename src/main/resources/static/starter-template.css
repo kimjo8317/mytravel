@@ -1,0 +1,9 @@
+.background-image {
+    background-image: url('../image/cave.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
