@@ -31,7 +31,10 @@ dependencies {
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
 //@Size 어노테이션 library 추가
 	implementation 'javax.validation:validation-api:2.0.1.Final'
-
+//securing 기능
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+	implementation 'org.springframework.security:spring-security-test'
 
 
 
