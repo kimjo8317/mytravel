@@ -21,6 +21,7 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     @Autowired
     private DataSource dataSource;
 
@@ -29,16 +30,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/account/register", "/css/**", "/api/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
+                    .antMatchers("/", "/account/register", "/css/**").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/account/login")
-                .permitAll()
-                .and()
+                    .loginPage("/account/login")
+                    .permitAll()
+                    .and()
                 .logout()
-                .permitAll();
+                    .permitAll();
     }
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
@@ -51,13 +53,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username,name "
                         + "from user_role ur inner join user u on ur.user_id = u.id "
                         + "inner join role r on ur.role_id = r.id "
-                        + "where email = ?");
+                        + "where u.username = ?");
 
     }
+
     /*Authentication 로그인 인증처리
-    * Authroization 권한 인증처리*/
+     * Authroization 권한 인증처리*/
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
