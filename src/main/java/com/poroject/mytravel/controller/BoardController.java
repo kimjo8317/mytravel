@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
-import java.net.Authenticator;
 
 @Controller
 @RequestMapping("/board")
@@ -31,7 +30,7 @@ public class BoardController {
     private BoardValidator boardValidator;
 
     @GetMapping("/list")
-    public String list(Model model,@PageableDefault(size = 2) Pageable pageable,
+    public String list(Model model,@PageableDefault(size = 10) Pageable pageable,
                       @RequestParam(required = false,defaultValue = "")String searchText) {
 //        Page<Board> boards = boardRepository.findAll(pageable);
         Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
