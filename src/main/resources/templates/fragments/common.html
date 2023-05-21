@@ -14,7 +14,7 @@
 </head>
   <body>  
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:fragment="menu(menu)">
-        <a class="navbar-brand" href="#">MyTravel</a>
+        <a class="navbar-brand" href="#">Spring Boot Tutorial</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,13 +41,11 @@
                     </div>
                 </li> -->
             </ul>
-            <!-- Spring Security -->
+            
             <a class="btn btn-secondary my-2 mr-2 my-sm-0" th:href="@{/account/login}"
                 sec:authorize="!isAuthenticated()">로그인</a>
             <a class="btn btn-secondary my-2 my-sm-0" th:href="@{/account/register}"
                 sec:authorize="!isAuthenticated()">회원가입</a>
-            
-            <!-- logout -> post -> logout Success -->
             <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
                 <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
                 <span class="text-white" sec:authentication="name">사용자</span>

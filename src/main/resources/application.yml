@@ -19,4 +19,8 @@ spring:
 #    init:
 #      data-locations : classpath:db/initCategory.sql
 
-
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#sql문 로그남기기
