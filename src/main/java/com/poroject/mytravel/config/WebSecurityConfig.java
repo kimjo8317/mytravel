@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/account/register", "/css/**", "/api/**").permitAll()
+                .antMatchers("/", "/account/register", "/css/**", "/api/**", "images/**").permitAll()
                 //로그인없이 api/**요청가능하도록 설정
                     .anyRequest().authenticated()
                     .and()
