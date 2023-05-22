@@ -5,7 +5,6 @@ import com.poroject.mytravel.model.User;
 import com.poroject.mytravel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 
@@ -18,7 +17,9 @@ class UserApiController {
 
     @GetMapping("/users")
     List<User> all() {
-        return repository.findAll();
+        List<User> users = repository.findAll();
+        users.get(0).getBoards().size();
+        return users;
     }
 
     @PostMapping("/users")
