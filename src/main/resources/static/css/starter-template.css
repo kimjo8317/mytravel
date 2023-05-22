@@ -1,8 +1,8 @@
 body {
-  background-image: url('../images/유니.webp');
-  background-repeat : no-repeat;
-  background-size: cover;
-  background-position: bottom;
+  background-image: url('../images/모레노빙하.jfif');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .starter-template {
