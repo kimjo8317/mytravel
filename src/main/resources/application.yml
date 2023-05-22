@@ -1,11 +1,12 @@
 
 server:
-  port: 8090
+  port: 8089
 
 spring:
   jpa:
-    hibernate:
-#      ddl-auto: create //??????? ??? , ?????? ??????
+    properties:
+      hibernate:
+        format_sql: true
     show-sql: true
     generate-ddl: true
     defer-datasource-initialization: true
